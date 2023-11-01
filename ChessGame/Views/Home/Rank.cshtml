@@ -1,0 +1,155 @@
+﻿
+@{
+    ViewData["Title"] = "Rank";
+    Layout = "~/Views/Shared/Home_layout.cshtml";
+    <link rel="stylesheet" href="~/css/Rank.css">
+    <style>
+        button:hover {
+            background-color: gray;
+        }
+
+        img:hover, button:hover {
+            cursor: pointer;
+        }
+
+        .pawn:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url(https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/regwa/phpif1r0K.jpeg);
+            background-size: cover;
+            background-attachment: fixed;
+            font-family: 'Roboto', sans-serif;
+            position: relative;
+            height: 160vh;
+        }
+
+            body::before {
+                content: "";
+                background: rgba(118, 184, 82, 0.4);
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: -1;
+            }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            width: 33%;
+            height: auto;
+            margin-bottom: 50px;
+            margin-top: 50px
+        }
+
+        .nen {
+            background-color: #397804;
+        }
+
+        .px-2 {
+            font-size: 16px;
+            margin: 0 20px;
+            letter-spacing: 2px;
+            font-weight: bold
+        }
+
+        .change_color:hover {
+            color: blue;
+        }
+
+        .btn_view {
+            border: none;
+            border-radius: 5px;
+            background-color: chartreuse;
+            margin-left: 15px;
+        }
+
+        .img_right {
+            height: 120px;
+            display: block;
+            margin: 0 auto;
+            transform: scale(1.1);
+            margin-left: -20px;
+        }
+
+        .img_left {
+            height: 120px;
+            display: block;
+            margin: 0 auto;
+            transform: scale(1.1);
+        }
+
+        .img_center {
+            height: 100px;
+            margin-top: 20px;
+            margin-right 5px;
+            transform: scale(1.3);
+        }
+
+        .container_2 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center
+        }
+
+        .header_width {
+            max-width: 10800px;
+        }
+
+        .menu {
+            display: none;
+        }
+
+        p {
+            position: relative;
+            font-size: 30px;
+            color: #fcedd8;
+            font-family: 'Niconne', cursive;
+            font-weight: 700;
+            text-shadow: 5px 5px 0px #eb452b, 10px 10px 0px #efa032;
+            height: 50px;
+        }
+
+    </style>
+}
+    <div class="container mt-5">
+        <h1 class="text-center">Rank</h1>
+        <div class="table-responsive">
+            <table class="table leaderboard-table">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody id="leaderboard">
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+<script>
+    const menu_click = document.querySelector('.header_right');
+    const old_menu = document.querySelector('.dropdown-menu');
+
+    menu_click.addEventListener('click', () => {
+        if (old_menu.style.display === 'none' || old_menu.style.display === '') {
+            old_menu.style.display = 'block';
+        } else {
+            old_menu.style.display = 'none';
+        }
+    });
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="~/js/Rank.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+

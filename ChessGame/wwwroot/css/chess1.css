@@ -1,0 +1,305 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-user-select: none !important;
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
+    -khtml-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    /* outline: none !important; */
+}
+
+
+#main1 {
+    background: linear-gradient(rgba(118, 184, 82, 0.1), rgba(118, 184, 82, 0.1)), url('https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/regwa/phpif1r0K.jpeg');
+    height: 100vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center; /* Canh giữa theo chiều ngang */
+    align-items: center; /* Canh giữa theo chiều dọc */
+}
+
+
+
+#header p {
+    font-size: 50px;
+    color: aliceblue;
+    z-index: 1;
+    position: relative;
+}
+
+#header {
+    background: rgba(118, 184, 82, 0);
+    margin: 0px;
+    padding: 60px;
+    text-align: center;
+    width: 30%;
+}
+
+#mode {
+    position: relative;
+}
+
+    #mode .mode1 {
+        width: 50px;
+        height: 20px;
+    }
+
+    #mode a {
+        text-decoration: none;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        color: bisque
+    }
+
+#main1 #container {
+    display: flex;
+    justify-content: center; /* Canh giữa theo chiều ngang */
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+#board1 {
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 1 / 1;
+    background-color: rgba(0, 255, 255, 0.4);
+    cursor: pointer;
+    border: 4px solid;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); /* Tạo 8 cột có chiều rộng bằng nhau */
+    grid-template-rows: repeat(8, 1fr);
+}
+
+
+    #main1 #board1 .node {
+        width: 100%; /* Chiều rộng của một ô là 100% của cột */
+        height: 100%;
+        background-color: #F1F3CE;
+        margin: 0;
+        border: 1px solid #000;
+        text-align: center;
+        border-color: rgb(9, 9, 9);
+        color: aliceblue;
+        transition: 0.2s;
+        float: left;
+    }
+
+.node:hover {
+    opacity: 0.5;
+}
+
+
+    .clock input {
+        width: 200px;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0);
+        border: none;
+        font-size: 50px;
+        font-family: monospace;
+        color: #edeed1;
+    }
+
+#clock1 {
+}
+
+
+#newgame {
+    font-size: 30px;
+    color: #edeed1;
+    cursor: pointer;
+    transition: text-shadow 0.3s ease-in-out;
+}
+
+
+.black {
+    background-color: #779952 !important;
+}
+
+.white {
+    background-color: #edeed1 !important;
+}
+
+.tot_trang {
+    background: url(https://upload.wikimedia.org/wikipedia/commons/0/04/Chess_plt60.png);
+    background-size: contain;
+}
+
+.xe_trang {
+    background: url(https://upload.wikimedia.org/wikipedia/commons/5/5c/Chess_rlt60.png);
+    background-size: contain;
+}
+
+.ma_trang {
+    background: url(https://upload.wikimedia.org/wikipedia/commons/2/28/Chess_nlt60.png);
+    background-size: contain;
+}
+
+.tuong_trang {
+    background: url(https://upload.wikimedia.org/wikipedia/commons/9/9b/Chess_blt60.png);
+    background-size: contain;
+}
+
+.hau_trang {
+    background: url(https://upload.wikimedia.org/wikipedia/commons/4/49/Chess_qlt60.png);
+    background-size: contain;
+}
+
+.vua_trang {
+    background: url(https://upload.wikimedia.org/wikipedia/commons/3/3b/Chess_klt60.png);
+    background-size: contain;
+    /* transform: rotate(180deg); */
+}
+
+.tot_den {
+    background: url(https://upload.wikimedia.org/wikipedia/commons/c/cd/Chess_pdt60.png);
+    background-size: contain;
+}
+
+.xe_den {
+    background: url(https://upload.wikimedia.org/wikipedia/commons/a/a0/Chess_rdt60.png);
+    background-size: contain;
+}
+
+.ma_den {
+    background: url(https://upload.wikimedia.org/wikipedia/commons/f/f1/Chess_ndt60.png);
+    background-size: contain;
+}
+
+.tuong_den {
+    background: url(https://upload.wikimedia.org/wikipedia/commons/8/81/Chess_bdt60.png);
+    background-size: contain;
+}
+
+.hau_den {
+    background: url(https://upload.wikimedia.org/wikipedia/commons/a/af/Chess_qdt60.png);
+    background-size: contain;
+}
+
+.vua_den {
+    background: url(https://upload.wikimedia.org/wikipedia/commons/e/e3/Chess_kdt60.png);
+    background-size: contain;
+}
+
+    .tot_den:hover, .tot_trang:hover, .xe_den:hover, .xe_trang:hover, .ma_den:hover, .ma_trang:hover,
+    .tuong_den:hover, .tuong_trang:hover, .hau_den:hover, .hau_trang:hover, .vua_den:hover, .vua_trang:hover {
+        cursor: pointer;
+    }
+
+.xanh {
+    background-color: #3D680A !important;
+}
+
+.ex {
+    background-color: #ad2c2c;
+}
+
+.dot {
+    position: relative;
+    top: 32.5%;
+    opacity: 0.5;
+    width: 35%;
+    height: 35%;
+    opacity: 0.5;
+    display: none;
+}
+
+.reddot {
+    position: relative;
+    top: 32.5%;
+    opacity: 0.5;
+    width: 35%;
+    height: 35%;
+    opacity: 0.5;
+    display: none;
+}
+
+.Active {
+    display: unset;
+}
+
+#loading {
+    position: absolute;
+    color: #edeed1;
+    width: 1vw;
+    height: 3vh;
+    white-space: nowrap;
+    left: 40vw;
+    top: 90px;
+}
+
+.dot_loading {
+    width: 15px;
+    height: 15px;
+    background-color: #edeed1;
+    border-radius: 50%;
+    margin: 0 0.2vw;
+    animation: bounce 0.5s infinite alternate;
+    display: inline-block;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Điều chỉnh các chấm tròn màu khác */
+.dot_loading:nth-child(2) {
+    background-color: #edeed1;
+    animation-delay: 0.1s;
+}
+
+.dot_loading:nth-child(3) {
+    background-color: #edeed1;
+    animation-delay: 0.2s;
+}
+
+#main1 p {
+    text-align: left;
+    width: auto;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    font-size: 30px;
+    font-family: monospace;
+    color: #edeed1;
+    float: right;
+}
+.tabname{
+    width: 100%;
+    max-width: 600px;
+}
+#Name1 {
+}
+#Avatar1 {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+#Name2 {
+}
+#Avatar2 {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 768px) {
+    #loading {
+        top: 10vh;
+        left: 100px;
+    }
+    #header{
+        display: none;
+    }
+}

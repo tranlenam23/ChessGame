@@ -1,0 +1,350 @@
+﻿
+    @{
+        ViewData["Title"] = "Chess Game";
+        Layout = "~/Views/Shared/Home_layout.cshtml";
+        <style>
+            button:hover {
+                background-color: gray;
+            }
+
+            img:hover, button:hover {
+                cursor: pointer;
+            }
+
+            .pawn:hover {
+                transform: scale(1.1);
+                transition: transform 0.3s ease;
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+                background-image: url(https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/regwa/phpif1r0K.jpeg);
+                background-size: cover;
+                background-attachment: fixed;
+                font-family: 'Roboto', sans-serif;
+                position: relative;
+                height: 160vh;
+            }
+
+                body::before {
+                    content: "";
+                    background: rgba(118, 184, 82, 0.4);
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    z-index: -1;
+                }
+
+            .row {
+                display: flex;
+                justify-content: center;
+                width: 33%;
+                height: auto;
+                margin-bottom: 50px;
+                margin-top: 50px
+            }
+
+            .nen {
+            background-color: #397804;
+            }
+
+            .px-2 {
+                font-size: 16px;
+                margin: 0 20px;
+                letter-spacing: 2px;
+                font-weight: bold
+            }
+
+            .change_color:hover {
+                color: blue;
+            }
+
+            .btn_view {
+                border: none;
+                border-radius: 5px;
+                background-color: chartreuse;
+                margin-left: 15px;
+            }
+
+            .img_right {
+                height: 120px;
+                display: block;
+                margin: 0 auto;
+                transform: scale(1.1);
+                margin-left: -20px;
+            }
+
+            .img_left {
+                height: 120px;
+                display: block;
+                margin: 0 auto;
+                transform: scale(1.1);
+            }
+
+            .img_center {
+                height: 100px;
+                margin-top: 20px;
+                margin-right 5px;
+                transform: scale(1.3);
+            }
+
+            .container_2 {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center
+            }
+
+            .header_width {
+                max-width: 10800px;
+            }
+
+            .menu {
+                display: none;
+            }
+
+        p {
+            position: relative;
+            font-size: 30px;
+            color: #fcedd8;
+            font-family: 'Niconne', cursive;
+            font-weight: 700;
+            text-shadow: 5px 5px 0px #eb452b, 10px 10px 0px #efa032;
+            height: 50px;
+        }
+
+
+        </style>
+    }
+
+    <div>
+        <div class="container container_2">
+            <div class="row">
+                <div class="col-md-3 pawn" id="pawn1" style="text-align: center;">
+                    <img src="~/img/White.png" alt="White King" class="img_left">
+                    <img id="img1" src="" alt="">
+                    <p class="purples" id="user1"></p>
+                </div>
+                <div class="col-md-3 middle_" style="text-align: center;">
+                    <img src="~/img/Vs.png" alt="Free fire" class="img_center">
+                    
+                </div>
+                <div class="col-md-3 pawn" id="pawn1_1" style="text-align: center;">
+                    <img src="~/img/Black.png" alt="Black King" class="img_right">
+                    <img id="img1_1" src="" alt="">
+                    <p class="purples" id="user1_1"></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 pawn" id="pawn2" style="text-align: center;">
+                    <img src="~/img/White.png" alt="White King" class="img_left">
+                    <img id="img2" src="" alt="">
+                    <p class="purples" id="user2"></p>
+                </div>
+                <div class="col-md-3 middle_" style="text-align: center;">
+                    <img src="~/img/Vs.png" alt="Free fire" class="img_center">
+                    
+                </div>
+                <div class="col-md-3 pawn" id="pawn2_2" style="text-align: center;">
+                    <img src="~/img/Black.png" alt="Black King" class="img_right">
+                    <img id="img2_2" src="" alt="">
+                    <p class="purples" id="user2_2"></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 pawn" id="pawn3" style="text-align: center;">
+                    <img src="~/img/White.png" alt="White King" class="img_left">
+                    <img id="img3" src="" alt="">
+                    <p class="purples" id="user3"></p>
+                </div>
+                <div class="col-md-3 middle_" style="text-align: center;">
+                    <img src="~/img/Vs.png" alt="Free fire" class="img_center">
+                    
+                </div>
+                <div class="col-md-3 pawn" id="pawn3_3" style="text-align: center;">
+                    <img src="~/img/Black.png" alt="Black King" class="img_right">
+                    <img id="img3_3" src="" alt="">
+                    <p class="purples" id="user3_3"></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 pawn" id="pawn4" style="text-align: center;">
+                    <img src="~/img/White.png" alt="White King" class="img_left">
+                    <img id="img4" src="" alt="">
+                    <p class="purples" id="user4"></p>
+                </div>
+                <div class="col-md-3 middle_" style="text-align: center;">
+                    <img src="~/img/Vs.png" alt="Free fire" class="img_center">
+                    
+                </div>
+                <div class="col-md-3 pawn" id="pawn4_4" style="text-align: center;">
+                    <img src="~/img/Black.png" alt="Black King" class="img_right">
+                    <img id="img4_4" src="" alt="">
+                    <p class="purples" id="user4_4"></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 pawn" id="pawn5" style="text-align: center;">
+                    <img src="~/img/White.png" alt="White King" class="img_left">
+                    <img id="img5" src="" alt="">
+                    <p class="purples" id="user5"></p>
+                </div>
+                <div class="col-md-3 middle_" style="text-align: center;">
+                    <img src="~/img/Vs.png" alt="Free fire" class="img_center">
+                    
+                </div>
+                <div class="col-md-3 pawn" id="pawn5_5" style="text-align: center;">
+                    <img src="~/img/Black.png" alt="Black King" class="img_right">
+                    <img id="img5_5" src="" alt="">
+                    <p class="purples" id="user5_5"></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 pawn" id="pawn6" style="text-align: center;">
+                    <img src="~/img/White.png" alt="White King" class="img_left">
+                    <img id="img6" src="" alt="">
+                    <p class="purples" id="user6"></p>
+                </div>
+                <div class="col-md-3 middle_" style="text-align: center;">
+                    <img src="~/img/Vs.png" alt="Free fire" class="img_center">
+                    
+                </div>
+                <div class="col-md-3 pawn" id="pawn6_6" style="text-align: center;">
+                    <img src="~/img/Black.png" alt="Black King" class="img_right">
+                    <img id="img6_6" src="" alt="">
+                    <p class="purples" id="user6_6"></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 pawn" id="pawn7" style="text-align: center;">
+                    <img src="~/img/White.png" alt="White King" class="img_left">
+                    <img id="img7" src="" alt="">
+                    <p class="purples" id="user7"></p>
+                </div>
+                <div class="col-md-3 middle_" style="text-align: center;">
+                    <img src="~/img/Vs.png" alt="Free fire" class="img_center">
+                    
+                </div>
+                <div class="col-md-3 pawn" id="pawn7_7" style="text-align: center;">
+                    <img src="~/img/Black.png" alt="Black King" class="img_right">
+                    <img id="img7_7" src="" alt="">
+                    <p class="purples" id="user7_7"></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 pawn" id="pawn8" style="text-align: center;">
+                    <img src="~/img/White.png" alt="White King" class="img_left">
+                    <img id="img8" src="" alt="">
+                    <p class="purples" id="user8"></p>
+                </div>
+                <div class="col-md-3 middle_" style="text-align: center;">
+                    <img src="~/img/Vs.png" alt="Free fire" class="img_center">
+                    
+                </div>
+                <div class="col-md-3 pawn" id="pawn8_8" style="text-align: center;">
+                    <img src="~/img/Black.png" alt="Black King" class="img_right">
+                    <img id="img8_8" src="" alt="">
+                    <p class="purples" id="user8_8"></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 pawn" id="pawn9" style="text-align: center;">
+                    <img src="~/img/White.png" alt="White King" class="img_left">
+                    <img id="img9" src="" alt="">
+                    <p class="purples" id="user9"></p>
+                </div>
+                <div class="col-md-3 middle_" style="text-align: center;">
+                    <img src="~/img/Vs.png" alt="Free fire" class="img_center">
+                    
+                </div>
+                <div class="col-md-3 pawn" id="pawn9_9" style="text-align: center;">
+                    <img src="~/img/Black.png" alt="Black King" class="img_right">
+                    <img id="img9_9" src="" alt="">
+                    <p class="purples" id="user9_9"></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 pawn" id="pawn10" style="text-align: center;">
+                    <img src="~/img/White.png" alt="White King" class="img_left">
+                    <img id="img10" src="" alt="">
+                    <p class="purples" id="user10"></p>
+                </div>
+                <div class="col-md-3 middle_" style="text-align: center;">
+                    <img src="~/img/Vs.png" alt="Free fire" class="img_center">
+                    
+                </div>
+                <div class="col-md-3 pawn" id="pawn10_10" style="text-align: center;">
+                    <img src="~/img/Black.png" alt="Black King" class="img_right">
+                    <img id="img10_10" src="" alt="">
+                    <p class="purples" id="user10_10"></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 pawn" id="pawn11" style="text-align: center;">
+                    <img src="~/img/White.png" alt="White King" class="img_left">
+                    <img id="img11" src="" alt="">
+                    <p class="purples" id="user11"></p>
+                </div>
+                <div class="col-md-3 middle_" style="text-align: center;">
+                    <img src="~/img/Vs.png" alt="Free fire" class="img_center">
+                    
+                </div>
+                <div class="col-md-3 pawn" id="pawn11_11" style="text-align: center;">
+                    <img src="~/img/Black.png" alt="Black King" class="img_right">
+                    <img id="img11_11" src="" alt="">
+                    <p class="purples" id="user11_11"></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 pawn" id="pawn12" style="text-align: center;">
+                    <img src="~/img/White.png" alt="White King" class="img_left">
+                    <img id="img12" src="" alt="">
+                    <p class="purples" id="user12"></p>
+                </div>
+                <div class="col-md-3 middle_" style="text-align: center;">
+                    <img src="~/img/Vs.png" alt="Free fire" class="img_center">
+                    
+                </div>
+                <div class="col-md-3 pawn" id="pawn12_12" style="text-align: center;">
+                    <img src="~/img/Black.png" alt="Black King" class="img_right">
+                    <img id="img12_12" src="" alt="">
+                    <p class="purples" id="user12_12"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@@microsoft/signalr@7.0.12/dist/browser/signalr.min.js"></script>
+    <script>
+    const menu_click = document.querySelector('.header_right');
+    const old_menu = document.querySelector('.dropdown-menu');
+
+        menu_click.addEventListener('click', () => {
+            if (old_menu.style.display === 'none' || old_menu.style.display === '') {
+                old_menu.style.display = 'block';
+            } else {
+                old_menu.style.display = 'none';
+            }
+        });
+    </script>
+<script>
+    var urlParams = new URLSearchParams(window.location.search);
+    var Username = urlParams.get("scriptValue");
+</script>
+<script src="~/js/Home.js"></script>

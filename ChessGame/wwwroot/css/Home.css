@@ -1,0 +1,49 @@
+﻿@media (max-width: 768px) {
+    .container {
+        display: block !important;
+        width: 100%;
+        flex-wrap: nowrap;
+    }
+
+    .row:not(.ignore-parent) {
+        display: flex !important;
+        width: 100%;
+    }
+
+    .pawn {
+        width: 33%;
+    }
+
+    .middle_ {
+        width: 33%;
+    }
+
+    .header_left {
+        display: none;
+    }
+
+    .header_second {
+        display: flex !important;
+        z-index: 1;
+    }
+
+    .header_right {
+        margin-left: 90%;
+        margin-top: -25px;
+    }
+
+    .menu {
+        display: block;
+        max-width: 40px;
+        margin-right: 99%;
+        margin-top: -5px;
+    }
+
+    .nen {
+        max-height: 50px;
+    }
+
+    body {
+        height: 320vh;
+    }
+}
