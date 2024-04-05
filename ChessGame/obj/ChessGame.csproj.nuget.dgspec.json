@@ -44,9 +44,29 @@
               "target": "Package",
               "version": "[12.18.0, )"
             },
+            "ComputeSharp": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
+            "ComputeSharp.Core": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
             "EntityFramework": {
               "target": "Package",
               "version": "[6.4.4, )"
+            },
+            "ILGPU": {
+              "target": "Package",
+              "version": "[1.5.1, )"
+            },
+            "ManagedCuda-100": {
+              "target": "Package",
+              "version": "[10.0.31, )"
+            },
+            "ManagedCuda.NETStandard": {
+              "target": "Package",
+              "version": "[9.1.300, )"
             },
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",

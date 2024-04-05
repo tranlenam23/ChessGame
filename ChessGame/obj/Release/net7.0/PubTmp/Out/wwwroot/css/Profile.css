@@ -1,0 +1,126 @@
+﻿/* CSS chung cho toàn bộ trang */
+body {
+    background: linear-gradient(rgba(118, 184, 82, 0.3), rgba(118, 184, 82, 0.3)), url('https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/regwa/phpif1r0K.jpeg');
+    font-family: Arial, sans-serif;
+    font-size: 16px; /* Kích thước font chữ mặc định */
+}
+
+/* Tiêu đề h1 */
+h1 {
+    color: #4caf50; /* Màu tiêu đề xanh lá cây */
+}
+
+/* Phần container chứa nội dung chính */
+.container {
+    background-color: #ffffff; /* Màu nền phần nội dung trắng */
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s; /* Hiệu ứng chuyển đổi mịn màng */
+}
+
+    /* Hiệu ứng khi hover trên phần container */
+    .container:hover {
+        transform: scale(1.02);
+    }
+
+/* Hình ảnh profile */
+.profile-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Tiêu đề trường nhập dữ liệu */
+.form-group label {
+    font-weight: bold;
+    color: #4caf50; /* Màu chữ tiêu đề trường nhập dữ liệu xanh lá cây */
+}
+
+/* Nút "Change Password" và "Save Changes" */
+#changePassword, button[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    margin-top: 10px;
+    padding: 10px 20px;
+    white-space: nowrap; /* Ngăn ngừng xuống dòng trên thiết bị di động */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+    /* Hiệu ứng hover trên nút "Change Password" */
+    #changePassword:hover {
+        background-color: #45a049;
+    }
+
+/* Màu sắc cho trường nhập dữ liệu */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    background-color: #f3f3f3;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Hiệu ứng hover trên biểu tượng */
+.form-group label i:hover {
+    color: #4caf50;
+}
+
+/* Tùy chỉnh cho biểu tượng */
+.form-group label i {
+    font-size: 24px;
+    margin-right: 10px;
+    color: #4caf50;
+}
+
+/* Tùy chỉnh cho số trận thắng và thua */
+.form-group span {
+    font-size: 20px;
+    font-weight: bold;
+    color: #4caf50;
+}
+
+/* Nút "Win" và "Lost" */
+#winButton, #lostButton {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    margin-top: 10px;
+    padding: 10px 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+    /* Hiệu ứng hover trên nút "Win" và "Lost" */
+    #winButton:hover, #lostButton:hover {
+        background-color: #45a049;
+    }
+
+/* CSS cho phần Introduction */
+#bio {
+    max-height: 150px;
+    overflow-y: auto; /* Bật cuộn dọc khi nội dung vượt quá chiều cao */
+    background-color: #f3f3f3;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Media query để thích ứng với các thiết bị nhỏ hơn */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Giảm kích thước font chữ cho thiết bị di động */
+    }
+
+    .container {
+        padding: 10px; /* Giảm khoảng cách xung quanh container */
+    }
+
+    .profile-image img {
+        width: 100px;
+        height: 100px; /* Giảm kích thước hình ảnh profile */
+    }
+}

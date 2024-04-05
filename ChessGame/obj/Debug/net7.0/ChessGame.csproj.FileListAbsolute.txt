@@ -89,3 +89,9 @@ C:\Users\ADMIN\source\repos\ChessGame\ChessGame\bin\Debug\net7.0\Microsoft.Exten
 C:\Users\ADMIN\source\repos\ChessGame\ChessGame\bin\Debug\net7.0\Azure.Storage.Blobs.dll
 C:\Users\ADMIN\source\repos\ChessGame\ChessGame\bin\Debug\net7.0\Azure.Storage.Common.dll
 C:\Users\ADMIN\source\repos\ChessGame\ChessGame\bin\Debug\net7.0\System.IO.Hashing.dll
+C:\Users\ADMIN\source\repos\ChessGame\ChessGame\bin\Debug\net7.0\ComputeSharp.dll
+C:\Users\ADMIN\source\repos\ChessGame\ChessGame\bin\Debug\net7.0\ComputeSharp.Core.dll
+C:\Users\ADMIN\source\repos\ChessGame\ChessGame\bin\Debug\net7.0\ILGPU.dll
+C:\Users\ADMIN\source\repos\ChessGame\ChessGame\bin\Debug\net7.0\ManagedCuda.dll
+C:\Users\ADMIN\source\repos\ChessGame\ChessGame\bin\Debug\net7.0\TerraFX.Interop.Windows.dll
+C:\Users\ADMIN\source\repos\ChessGame\ChessGame\bin\Debug\net7.0\runtimes\linux-x64\native\libnvcuda.so

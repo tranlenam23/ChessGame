@@ -20,7 +20,9 @@ async function startConnection() {
             .then(response => response.json())
             .then(data => {
                 data.forEach(item => {
+                    if (item.idmaps == scriptValue) {
                     x[item.x][item.y] = item.value;
+                    }
                 })
                 luot = x[1][9];
                 for (let i = 1; i <= 8; i++) {
@@ -60,7 +62,7 @@ async function startConnection() {
                 minute1 = Math.floor(x[3][9] / 100);
                 second2 = x[4][9] % 100;
                 minute2 = Math.floor(x[4][9] / 100);
-                connection.invoke("ReadyStart").catch(function (err) {
+                connection.invoke("readyStart", "Ready" + scriptValue).catch(function (err) {
                     console.error(err.toString());
                 });
                 
@@ -75,10 +77,12 @@ async function startConnection() {
 startConnection();
 
 
-connection.on("getPos", function (X, Y, Value, newX, newY, newValue) {
+connection.on("getPos" + scriptValue, function (X, Y, Value, newX, newY, newValue) {
     x[X][Y] = Value;
     x[newX][newY] = newValue;
     luot = 0;
+    check4(X, Y);
+    check4(newX, newY);
     let t = document.getElementById(String(X + ',' + Y));
     let r = document.getElementById(String(newX + ',' + newY));
     t.classList.remove("tot_den", "tot_trang", "xe_den", "xe_trang", "ma_den", "ma_trang", "tuong_den", "tuong_trang", "hau_den", "hau_trang", "vua_den", "vua_trang");
@@ -137,16 +141,16 @@ connection.on("getPos", function (X, Y, Value, newX, newY, newValue) {
     }
 });
 
-connection.on("Over", function (over) {
+connection.on("Over" + scriptValue, function (over) {
     if (over == "Trang") {
         alert("Bạn Thua!");
         clearInterval(timerun2);
     }
 });
-connection.on("Loading", function () {
+connection.on("Loading" + scriptValue, function () {
     loading.style.opacity = 1;
 });
-connection.on("NewGame", function () {
+connection.on("NewGame" + scriptValue, function () {
     luot = 1;
     minute1 = 10;
     minute2 = 10;
@@ -157,7 +161,9 @@ connection.on("NewGame", function () {
         .then(response => response.json())
         .then(data => {
             data.forEach(item => {
-                x[item.x][item.y] = item.value;
+                if (item.idmaps == scriptValue) {
+                    x[item.x][item.y] = item.value;
+                }
             })
             for (let i = 1; i <= 8; i++) {
                 for (let j = 1; j <= 8; j++) {
@@ -201,31 +207,53 @@ connection.on("NewGame", function () {
     
 });
 
+var allCookies = document.cookie;
+var cookiesArray = allCookies.split('; ');
+var cookies = {};
+for (var i = 0; i < cookiesArray.length; i++) {
+    var cookie = cookiesArray[i].split('=');
+    var cookieName = decodeURIComponent(cookie[0]);
+    var cookieValue = decodeURIComponent(cookie[1]);
+    cookies[cookieName] = cookieValue;
+}
+var cookie_avatar = cookies['avatar'];
 
-
-connection.on("Ready", function () {
-    connection.invoke("ReadyStart1").catch(function (err) {
+connection.on("Ready" + scriptValue, function () {
+    connection.invoke("readyStart1", "Ready1" + scriptValue).catch(function (err) {
         console.error(err.toString());
     });
     loading.style.opacity = 0;
+    clearInterval(timerun2);
     timerun2 = setInterval(() => {
         countdown();
     }, 100);
     var urlParams = new URLSearchParams(window.location.search);
     document.getElementById("Name1").textContent = urlParams.get("param1");
     document.getElementById("Name2").textContent = urlParams.get("param2");
+    document.getElementById("Avatar2").src = cookie_avatar;
+    connection.invoke("SendAvatar", "GetAvatar" + scriptValue, cookie_avatar).catch(function (err) {
+        console.error(err.toString());
+    });
 });
-connection.on("Ready1", function () {
-    
-    loading.style.opacity = 0;
-    timerun2 = setInterval(() => {
-        countdown();
-    }, 100);
-    var urlParams = new URLSearchParams(window.location.search);
-    document.getElementById("Name1").textContent = urlParams.get("param1");
-    document.getElementById("Name2").textContent = urlParams.get("param2");
-});
+    connection.on("Ready1" + scriptValue, function () {
 
+        loading.style.opacity = 0;
+        clearInterval(timerun2);
+        timerun2 = setInterval(() => {
+            countdown();
+        }, 100);
+        var urlParams = new URLSearchParams(window.location.search);
+        document.getElementById("Name1").textContent = urlParams.get("param1");
+        document.getElementById("Name2").textContent = urlParams.get("param2");
+        document.getElementById("Avatar2").src = cookie_avatar;
+        connection.invoke("SendAvatar", "GetAvatar" + scriptValue, cookie_avatar).catch(function (err) {
+            console.error(err.toString());
+
+        });
+    });
+    connection.on("GetAvatar" + scriptValue, function (a) {
+        document.getElementById("Avatar1").src = a;
+    });
 
 window.addEventListener('beforeunload', function (e) {
     var parts1 = time1.value.split(":");
@@ -273,7 +301,7 @@ function countdown() {
         clearInterval(timerun2);
         async function sendGameOverSignal() {
             try {
-                await connection.invoke("GameOver", "Den");
+                await connection.invoke("GameOver", "Over" + scriptValue, "Den");
             } catch (error) {
                 console.error(error.toString());
             }
@@ -332,14 +360,14 @@ async function NewGame() {
     try {
         var loading = document.getElementById("loading");
         loading.style.opacity = 1;
-        await connection.invoke("sendLoading").catch(function (err) {
+        await connection.invoke("sendLoading", "Loading" + scriptValue).catch(function (err) {
             console.error(err.toString());
         });
         const response = await fetch("/Chess/NewGame", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
-            }
+            }, body: JSON.stringify(scriptValue)
         });
 
         if (response.ok) {
@@ -348,7 +376,7 @@ async function NewGame() {
         } else {
             alert("Lỗi trong fetch");
         }
-        await connection.invoke("sendNewGame").catch(function (err) {
+        await connection.invoke("sendNewGame", "NewGame" + scriptValue).catch(function (err) {
             console.error(err.toString());
         });
         luot = 1;
@@ -361,7 +389,9 @@ async function NewGame() {
             .then(response => response.json())
             .then(data => {
                 data.forEach(item => {
-                    x[item.x][item.y] = item.value;
+                    if (item.idmaps == scriptValue) {
+                        x[item.x][item.y] = item.value;
+                    }
                 })
                 for (let i = 1; i <= 8; i++) {
                     for (let j = 1; j <= 8; j++) {
@@ -421,12 +451,12 @@ var second2;
 
 
 async function UpDate(X, Y, Value, newX, newY, newValue) {
-    connection.invoke("sendPos", X, Y, Value, newX, newY, newValue).catch(function (err) {
+    connection.invoke("sendPos", "getPos" + scriptValue, X, Y, Value, newX, newY, newValue).catch(function (err) {
         console.error(err.toString());
     });
     const data = [
-        { X: X, Y: Y, Value: Value },
-        { X: newX, Y: newY, Value: newValue }
+        { Ismaps: scriptValue, X: X, Y: Y, Value: Value },
+        { Ismaps: scriptValue, X: newX, Y: newY, Value: newValue }
     ];
     try {
         const response = await fetch("/Chess/UpdateData", {
@@ -726,7 +756,7 @@ function check(a, b) {
                     if (chieuhet_trang() == 0) {
                         async function sendGameOverSignal() {
                             try {
-                                await connection.invoke("GameOver", "Den");
+                                await connection.invoke("GameOver", "Over" + scriptValue, "Den");
                             } catch (error) {
                                 console.error(error.toString());
                             }

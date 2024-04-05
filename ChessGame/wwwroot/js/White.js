@@ -709,14 +709,7 @@ function check(a, b) {
                 vua_trang_run(a, b);
                 return;
             }
-            let v = chieutuong_trang();
-            for (let i = 1; i <= 8; i++) {
-                for (let j = 1; j <= 8; j++) {
-                    if (v[i][j] == 1 && x[i][j] == 20) {
-                        Return();
-                    }
-                }
-            }
+            
         } else if (x[a][b] == 15) {
             if (m == 1) {
                 xe_trang_active(a, b);
@@ -842,6 +835,7 @@ function anquan_den(a, b, d, f, s) {
             y20.classList.remove(s);
             break;
     }
+   
     UpDate(d, f, 0,a, b, x[d][f]);
     x[a][b] = x[d][f];
     x[d][f] = 0;
@@ -853,7 +847,15 @@ function anquan_den(a, b, d, f, s) {
             history[h][i][j] = x[i][j];
         }
     }
-
+    let v = chieutuong_trang();
+    for (let i = 1; i <= 8; i++) {
+        for (let j = 1; j <= 8; j++) {
+            if (v[i][j] == 1 && x[i][j] == 20) {
+                Return();
+                break;
+            }
+        }
+    }
 }
 // TRANG
 
@@ -1818,6 +1820,7 @@ function chieutuong_trang() {
     }
     for (let i = 1; i <= 8; i++) {
         for (let j = 1; j <= 8; j++) {
+
             if (x[i][j] == 1) {
                 u[i + 1][j - 1] = 1;
                 u[i + 1][j + 1] = 1;

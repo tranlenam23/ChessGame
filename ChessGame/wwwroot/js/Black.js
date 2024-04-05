@@ -710,14 +710,7 @@ function check(a, b) {
                 vua_den_run(a, b);
                 return;
             }
-            let v = chieutuong_den();
-            for (let i = 1; i <= 8; i++) {
-                for (let j = 1; j <= 8; j++) {
-                    if (v[i][j] == 1 && x[i][j] == 10) {
-                        Return();
-                    }
-                }
-            }
+            
         } else if (x[a][b] == 5) {
             if (m == 1) {
                 xe_den_active(a, b);
@@ -891,6 +884,7 @@ function anquan_trang(a, b, d, f, s) {
             y19.classList.remove(s);
             break;
     }
+   
     UpDate(d,f,0,a, b, x[d][f]);
     x[a][b] = x[d][f];
     x[d][f] = 0;
@@ -900,6 +894,15 @@ function anquan_trang(a, b, d, f, s) {
     for (let i = 1; i <= 8; i++) {
         for (let j = 1; j <= 8; j++) {
             history[h][i][j] = x[i][j];
+        }
+    }
+    let v = chieutuong_den();
+    for (let i = 1; i <= 8; i++) {
+        for (let j = 1; j <= 8; j++) {
+            if (v[i][j] == 1 && x[i][j] == 10) {
+                Return();
+                break;
+            }
         }
     }
 }

@@ -1,17 +1,41 @@
 ﻿using ChessGame.Data;
 using ChessGame.Models;
+using ComputeSharp;
+using ILGPU.Runtime.CPU;
+using ILGPU.Runtime;
+using ManagedCuda;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Configuration;
+using System.Diagnostics;
+using System.Drawing.Drawing2D;
+using System.Net.NetworkInformation;
+using System.Text.Json;
+using System.Xml.Linq;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using ILGPU.Runtime.Cuda;
+using ILGPU;
+using ILGPU.Runtime.OpenCL;
+using TerraFX.Interop.WinRT;
+using TerraFX.Interop.DirectX;
+using TerraFX.Interop.Windows;
+using Newtonsoft.Json;
+
 namespace ChessGame.Controllers
 {
-    
-    public class ChessController : Controller
+	
+
+	public class ChessController : Controller, IDisposable
     {
+
+
         private readonly ApplicationDbContext _context;
 
-        public ChessController(ApplicationDbContext context)
+        public ChessController(ApplicationDbContext context, IHttpClientFactory httpClientFactory)
         {
             _context = context;
         }
+
 
         public IActionResult White()
         { 
@@ -23,7 +47,12 @@ namespace ChessGame.Controllers
 
             return View("Black");
         }
-        public IActionResult Offline()
+		public IActionResult AI()
+		{
+
+			return View("AI");
+		}
+		public IActionResult Offline()
         {
             return View();
         }
@@ -111,8 +140,56 @@ namespace ChessGame.Controllers
             return Json(new { success = true, message = "Dữ liệu đã được cập nhật." });
         }
 
-
         
+		[HttpPost]
+		public ActionResult AI([FromBody] InputArrayModel inputArray)
+        {
+            using (ChessAI chessAI = new ChessAI())
+            {
+               
 
-    }
+                InputArrayModel a = new InputArrayModel();
+
+                int[][] resultArray = inputArray.InputArray.Select(innerList => innerList.ToArray()).ToArray();
+                Stopwatch stopwatch = Stopwatch.StartNew();
+                // Trả về mảng kết quả cho JavaScript
+                List<int[][]> listOfArrays = chessAI.ValidMoves(resultArray, true);
+               
+                int temp = 10000000;
+                Parallel.ForEach(listOfArrays, i =>
+                {
+                    int[][] maxtrang = chessAI.MaxVal(i, -1000000000, 1000000000, 2);
+                    int diem = chessAI.SumArray(maxtrang, false);
+
+                    if (temp > diem)
+                    {
+                        temp = diem;
+                        resultArray = i;
+                    }
+                });
+                Debug.WriteLine(temp);
+                List<List<int>> listOfLists = new List<List<int>>();
+
+                foreach (var row in resultArray)
+                {
+                    // Tạo danh sách từ mỗi dòng của mảng hai chiều
+                    List<int> list = new List<int>(row);
+                    listOfLists.Add(list);
+
+                }
+                a.InputArray = listOfLists;
+                stopwatch.Stop();
+                TimeSpan elapsedTime = stopwatch.Elapsed;
+
+                // In ra thời gian đã trôi qua
+                Debug.WriteLine("Thời gian đã trôi qua: " + elapsedTime);
+                temp = 10000000;
+                return Json(a.InputArray);
+            }
+            
+		}
+	}
+
+
+
 }

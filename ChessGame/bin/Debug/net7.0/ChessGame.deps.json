@@ -9,7 +9,12 @@
       "ChessGame/1.0.0": {
         "dependencies": {
           "Azure.Storage.Blobs": "12.18.0",
+          "ComputeSharp": "2.1.0",
+          "ComputeSharp.Core": "2.1.0",
           "EntityFramework": "6.4.4",
+          "ILGPU": "1.5.1",
+          "ManagedCuda-100": "10.0.31",
+          "ManagedCuda.NETStandard": "9.1.300",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "7.0.12",
           "Microsoft.AspNetCore.SignalR": "1.1.0",
           "Microsoft.AspNetCore.SignalR.Common": "7.0.12",
@@ -80,6 +85,26 @@
           }
         }
       },
+      "ComputeSharp/2.1.0": {
+        "dependencies": {
+          "ComputeSharp.Core": "2.1.0",
+          "TerraFX.Interop.Windows": "10.0.22621.2"
+        },
+        "runtime": {
+          "lib/net6.0/ComputeSharp.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.0"
+          }
+        }
+      },
+      "ComputeSharp.Core/2.1.0": {
+        "runtime": {
+          "lib/net6.0/ComputeSharp.Core.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.0"
+          }
+        }
+      },
       "EntityFramework/6.4.4": {
         "dependencies": {
           "Microsoft.CSharp": "4.7.0",
@@ -104,6 +129,31 @@
           "lib/net6.0/Humanizer.dll": {
             "assemblyVersion": "2.14.0.0",
             "fileVersion": "2.14.1.48190"
+          }
+        }
+      },
+      "ILGPU/1.5.1": {
+        "runtime": {
+          "lib/net7.0/ILGPU.dll": {
+            "assemblyVersion": "1.5.1.0",
+            "fileVersion": "1.5.1.0"
+          }
+        }
+      },
+      "ManagedCuda-100/10.0.31": {
+        "runtime": {
+          "lib/net46/ManagedCuda.dll": {
+            "assemblyVersion": "10.0.31.0",
+            "fileVersion": "10.0.31.0"
+          }
+        }
+      },
+      "ManagedCuda.NETStandard/9.1.300": {
+        "runtimeTargets": {
+          "runtimes/linux-x64/native/libnvcuda.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
           }
         }
       },
@@ -943,6 +993,14 @@
             "fileVersion": "6.0.21.52210"
           }
         }
+      },
+      "TerraFX.Interop.Windows/10.0.22621.2": {
+        "runtime": {
+          "lib/net7.0/TerraFX.Interop.Windows.dll": {
+            "assemblyVersion": "10.0.22621.2",
+            "fileVersion": "10.0.22621.2"
+          }
+        }
       }
     }
   },
@@ -980,6 +1038,20 @@
       "path": "azure.storage.common/12.17.0",
       "hashPath": "azure.storage.common.12.17.0.nupkg.sha512"
     },
+    "ComputeSharp/2.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AMHO8BColwjC9B+OnjzbfP2SOtNrZ9to6kjg2HXYWsrkrnbLBxu5Psvvgck99VRiO69WzrnqWtnbLQOnORm8Bw==",
+      "path": "computesharp/2.1.0",
+      "hashPath": "computesharp.2.1.0.nupkg.sha512"
+    },
+    "ComputeSharp.Core/2.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-z4fMtHvmIzZvCfHF9r7jJWcTHhg5N2Ry9MeaERSMJNs5mifRmEvwapkpS02vokgelnE/w1iWGVwJQfV7WmPW0w==",
+      "path": "computesharp.core/2.1.0",
+      "hashPath": "computesharp.core.2.1.0.nupkg.sha512"
+    },
     "EntityFramework/6.4.4": {
       "type": "package",
       "serviceable": true,
@@ -993,6 +1065,27 @@
       "sha512": "sha512-lQKvtaTDOXnoVJ20ibTuSIOf2i0uO0MPbDhd1jm238I+U/2ZnRENj0cktKZhtchBMtCUSRQ5v4xBCUbKNmyVMw==",
       "path": "humanizer.core/2.14.1",
       "hashPath": "humanizer.core.2.14.1.nupkg.sha512"
+    },
+    "ILGPU/1.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Q4URSxEqH+u0XE3XCtYZ2h3FZgLp9VOOeelvKCmniiTlKft0JNCs13EOqayWVjwvPUbD4w/XaFlP3CdmaRdj8w==",
+      "path": "ilgpu/1.5.1",
+      "hashPath": "ilgpu.1.5.1.nupkg.sha512"
+    },
+    "ManagedCuda-100/10.0.31": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nN+x9HMHCNDHaWFjXJwEXULMzD0FmdeTfp7p2ILLT3Ae1cxtWuLR5ra0olN+pmbAAGfcEQWGcp+Kui+vghvvZQ==",
+      "path": "managedcuda-100/10.0.31",
+      "hashPath": "managedcuda-100.10.0.31.nupkg.sha512"
+    },
+    "ManagedCuda.NETStandard/9.1.300": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Qv8KYzDfnHUdXrgjBsd8jShnP68FCLiUhCkfpFVhZub7FArLN+SpfhUZZt/5emoKfj9CIKAcQjeD6OJR7cdjvw==",
+      "path": "managedcuda.netstandard/9.1.300",
+      "hashPath": "managedcuda.netstandard.9.1.300.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.Abstractions/2.2.0": {
       "type": "package",
@@ -1707,6 +1800,13 @@
       "sha512": "sha512-IXoJOXIqc39AIe+CIR7koBtRGMiCt/LPM3lI+PELtDIy9XdyeSrwXFdWV9dzJ2Awl0paLWUaknLxFQ5HpHZUog==",
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
+    },
+    "TerraFX.Interop.Windows/10.0.22621.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lORoYCoURS33Vi7PDvubRugLF2+l5v3rX2oVEqNhpBLjs3aZpqapRvTHPKVwsC+dGrsGuqJ/3yXuxVUb0vl3vg==",
+      "path": "terrafx.interop.windows/10.0.22621.2",
+      "hashPath": "terrafx.interop.windows.10.0.22621.2.nupkg.sha512"
     }
   }
 }

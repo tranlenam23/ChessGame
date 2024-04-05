@@ -57,6 +57,10 @@
       "PackagePath": "staticwebassets\\img\\menu.png"
     },
     {
+      "Id": "C:\\Users\\ADMIN\\source\\repos\\ChessGame\\ChessGame\\wwwroot\\js\\AI.js",
+      "PackagePath": "staticwebassets\\js\\AI.js"
+    },
+    {
       "Id": "C:\\Users\\ADMIN\\source\\repos\\ChessGame\\ChessGame\\wwwroot\\js\\Black.js",
       "PackagePath": "staticwebassets\\js\\Black.js"
     },

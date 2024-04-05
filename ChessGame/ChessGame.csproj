@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -34,7 +34,12 @@
 
   <ItemGroup>
     <PackageReference Include="Azure.Storage.Blobs" Version="12.18.0" />
+    <PackageReference Include="ComputeSharp" Version="2.1.0" />
+    <PackageReference Include="ComputeSharp.Core" Version="2.1.0" />
     <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="ILGPU" Version="1.5.1" />
+    <PackageReference Include="ManagedCuda-100" Version="10.0.31" />
+    <PackageReference Include="ManagedCuda.NETStandard" Version="9.1.300" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="7.0.12" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Common" Version="7.0.12" />

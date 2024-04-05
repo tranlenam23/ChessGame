@@ -9,7 +9,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString);
     options.EnableSensitiveDataLogging();
 });
-
+builder.Services.AddHttpClient();
 
 //var service = new AzureBlobService();
 //await service.ListBlobContainersAsync();
@@ -43,6 +43,6 @@ app.UseEndpoints(endpoints =>
 });
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Login}/{id?}");
+    pattern: "{controller=Home}/{action=Home}/{id?}");
 
 app.Run();

@@ -13,18 +13,16 @@
     /* outline: none !important; */
 }
 
-body {
-    background-color: #00293C;
-}
 
 #main1 {
-    background-color: #00293C;
-    position: relative;
-    bottom: 160px;
-    right: 0;
-    height: 2000px;
-    width: 50%;
-    float: left;
+    background: linear-gradient(rgba(118, 184, 82, 0.1), rgba(118, 184, 82, 0.1)), url('https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/regwa/phpif1r0K.jpeg');
+    height: 100vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center; /* Canh giữa theo chiều ngang */
+    align-items: center; /* Canh giữa theo chiều dọc */
 }
 
 
@@ -37,7 +35,7 @@ body {
 }
 
 #header {
-    background-color: #00293C;
+    background: rgba(118, 184, 82, 0);
     margin: 0px;
     padding: 60px;
     text-align: center;
@@ -59,26 +57,32 @@ body {
         color: bisque
     }
 
-#main1 #board1 {
-    width: 600px;
-    height: 600px;
-    background-color: rgba(0, 255, 255, 0);
-    margin-inline: auto;
+#main1 #container {
+    display: flex;
+    justify-content: center; /* Canh giữa theo chiều ngang */
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+#board1 {
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 1 / 1;
+    background-color: rgba(0, 255, 255, 0.4);
     cursor: pointer;
     border: 4px solid;
-    position: relative;
-    /* z-index: 2; */
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); /* Tạo 8 cột có chiều rộng bằng nhau */
+    grid-template-rows: repeat(8, 1fr);
 }
 
 
-
     #main1 #board1 .node {
-        width: 74px;
-        height: 74px;
+        width: 100%; /* Chiều rộng của một ô là 100% của cột */
+        height: 100%;
         background-color: #F1F3CE;
         margin: 0;
-        border: none;
-        border: 0px solid;
+        border: 1px solid #000;
         text-align: center;
         border-color: rgb(9, 9, 9);
         color: aliceblue;
@@ -90,11 +94,6 @@ body {
     opacity: 0.5;
 }
 
-.clock {
-    text-align: center;
-    width: 100%;
-    height: 60px;
-}
 
     .clock input {
         width: 200px;
@@ -103,55 +102,27 @@ body {
         border: none;
         font-size: 50px;
         font-family: monospace;
-        color: #d4a354;
+        color: #edeed1;
     }
 
 #clock1 {
-    position: relative;
-    top: 30px;
 }
 
-#swap {
-    position: absolute;
-    right: 48.5vw;
-    top: 40vh;
-    font-size: 50px;
-    color: #d4a354;
-    z-index: 1;
-    cursor: pointer;
-}
-
-#return {
-    position: absolute;
-    right: 48.5vw;
-    top: 55vh;
-    font-size: 50px;
-    color: #d4a354;
-    z-index: 1;
-    cursor: pointer;
-    display: none;
-}
 
 #newgame {
-    position: absolute;
-    right: 48.5vw;
-    top: 65vh;
     font-size: 30px;
-    color: #d4a354;
-    z-index: 1;
+    color: #edeed1;
     cursor: pointer;
-    left: calc(50% + 400px);
-    top: 60vh;
     transition: text-shadow 0.3s ease-in-out;
 }
 
 
 .black {
-    background-color: #b16e41 !important;
+    background-color: #779952 !important;
 }
 
 .white {
-    background-color: #ffd599 !important;
+    background-color: #edeed1 !important;
 }
 
 .tot_trang {
@@ -217,12 +188,11 @@ body {
 
     .tot_den:hover, .tot_trang:hover, .xe_den:hover, .xe_trang:hover, .ma_den:hover, .ma_trang:hover,
     .tuong_den:hover, .tuong_trang:hover, .hau_den:hover, .hau_trang:hover, .vua_den:hover, .vua_trang:hover {
-        transform: scale(1.3);
         cursor: pointer;
     }
 
 .xanh {
-    background-color: #d4a354 !important;
+    background-color: #3D680A !important;
 }
 
 .ex {
@@ -255,21 +225,18 @@ body {
 
 #loading {
     position: absolute;
-    right: 23vw;
-    top: 65vh;
-    color: #d4a354;
-    z-index: 1;
-    cursor: pointer;
+    color: #edeed1;
     width: 1vw;
     height: 3vh;
     white-space: nowrap;
-    opacity : 0;
+    left: 40vw;
+    top: 90px;
 }
 
 .dot_loading {
     width: 15px;
     height: 15px;
-    background-color: #d4a354;
+    background-color: #edeed1;
     border-radius: 50%;
     margin: 0 0.2vw;
     animation: bounce 0.5s infinite alternate;
@@ -288,98 +255,51 @@ body {
 
 /* Điều chỉnh các chấm tròn màu khác */
 .dot_loading:nth-child(2) {
-    background-color: #d4a354;
+    background-color: #edeed1;
     animation-delay: 0.1s;
 }
 
 .dot_loading:nth-child(3) {
-    background-color: #d4a354;
+    background-color: #edeed1;
     animation-delay: 0.2s;
 }
 
 #main1 p {
-    text-align: right;
-    width: 30%;
-    height: 60px;
+    text-align: left;
+    width: auto;
     background-color: rgba(0, 0, 0, 0);
     border: none;
     font-size: 30px;
     font-family: monospace;
-    color: #d4a354;
+    color: #edeed1;
+    float: right;
 }
-
+.tabname{
+    width: 100%;
+    max-width: 600px;
+}
 #Name1 {
-    position: relative;
-    top: 100px;
+}
+#Avatar1 {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
 }
 
 #Name2 {
-    position: relative;
-    bottom: 150px;
+}
+#Avatar2 {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
 }
 
-@media (max-width: 1100px) {
-
-    body {
-        margin: 0;
-        padding: 0;
-        width: max-content;
-        height: 100vh;
-    }
-
-    #header {
-        display: none;
-    }
-
-    #main1 {
-        width: 100%;
-        height: 100%;
-        bottom: 0;
-    }
-
-        #main1 #board {
-            width: 100vw;
-            height: 100vw;
-        }
-
-    .clock {
-        text-align: left;
-    }
-
-    #main1 input {
-        direction: ltr;
-    }
-
-    #main1 p {
-        width: 90%;
-        direction: ltr;
-    }
-
-    #clock1 {
-        position: relative;
-        top: 50px;
-    }
-
-    #Name1 {
-        top: 10px;
-    }
-
-    #Name2 {
-        bottom: 30px;
-    }
-
-    #newgame {
-        position: absolute;
-        width: fit-content;
-        margin-left: 200px;
-        height: 40px;
-        top: 120%;
-        right: 0;
-        text-align: center;
-        left: 0;
-        z-index: 2;
-    }
-    #loading{
+@media screen and (max-width: 768px) {
+    #loading {
         top: 10vh;
+        left: 100px;
+    }
+    #header{
+        display: none;
     }
 }

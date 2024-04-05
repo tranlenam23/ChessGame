@@ -80,6 +80,42 @@
           }
         }
       },
+      "ComputeSharp/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "ComputeSharp.Core": "2.1.0",
+          "TerraFX.Interop.Windows": "10.0.22621.2"
+        },
+        "compile": {
+          "lib/net6.0/ComputeSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/ComputeSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/ComputeSharp.targets": {}
+        }
+      },
+      "ComputeSharp.Core/2.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/ComputeSharp.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/ComputeSharp.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/ComputeSharp.Core.targets": {}
+        }
+      },
       "EntityFramework/6.4.4": {
         "type": "package",
         "dependencies": {
@@ -120,6 +156,51 @@
         "runtime": {
           "lib/net6.0/Humanizer.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "ILGPU/1.5.1": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/ILGPU.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/ILGPU.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "ManagedCuda-100/10.0.31": {
+        "type": "package",
+        "compile": {
+          "lib/net46/ManagedCuda.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net46/ManagedCuda.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "ManagedCuda.NETStandard/9.1.300": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/ManagedCuda.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/ManagedCuda.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/linux-x64/native/libnvcuda.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
           }
         }
       },
@@ -1847,6 +1928,19 @@
             "rid": "win"
           }
         }
+      },
+      "TerraFX.Interop.Windows/10.0.22621.2": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/TerraFX.Interop.Windows.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/TerraFX.Interop.Windows.dll": {
+            "related": ".xml"
+          }
+        }
       }
     }
   },
@@ -1931,6 +2025,44 @@
         "lib/netstandard2.0/Azure.Storage.Common.xml"
       ]
     },
+    "ComputeSharp/2.1.0": {
+      "sha512": "AMHO8BColwjC9B+OnjzbfP2SOtNrZ9to6kjg2HXYWsrkrnbLBxu5Psvvgck99VRiO69WzrnqWtnbLQOnORm8Bw==",
+      "type": "package",
+      "path": "computesharp/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/cs/ComputeSharp.SourceGenerators.dll",
+        "build/ComputeSharp.targets",
+        "buildTransitive/ComputeSharp.targets",
+        "computesharp.2.1.0.nupkg.sha512",
+        "computesharp.nuspec",
+        "icon.png",
+        "lib/net6.0/ComputeSharp.dll",
+        "lib/net6.0/ComputeSharp.xml",
+        "lib/netstandard2.0/ComputeSharp.dll",
+        "lib/netstandard2.0/ComputeSharp.xml"
+      ]
+    },
+    "ComputeSharp.Core/2.1.0": {
+      "sha512": "z4fMtHvmIzZvCfHF9r7jJWcTHhg5N2Ry9MeaERSMJNs5mifRmEvwapkpS02vokgelnE/w1iWGVwJQfV7WmPW0w==",
+      "type": "package",
+      "path": "computesharp.core/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/cs/ComputeSharp.Core.SourceGenerators.dll",
+        "build/ComputeSharp.Core.targets",
+        "buildTransitive/ComputeSharp.Core.targets",
+        "computesharp.core.2.1.0.nupkg.sha512",
+        "computesharp.core.nuspec",
+        "icon.png",
+        "lib/net6.0/ComputeSharp.Core.dll",
+        "lib/net6.0/ComputeSharp.Core.xml",
+        "lib/netstandard2.0/ComputeSharp.Core.dll",
+        "lib/netstandard2.0/ComputeSharp.Core.xml"
+      ]
+    },
     "EntityFramework/6.4.4": {
       "sha512": "yj1+/4tci7Panu3jKDHYizxwVm0Jvm7b7m057b5h4u8NUHGCR8WIWirBTw+8EptRffwftIWPBeIRGNKD1ewEMQ==",
       "type": "package",
@@ -2004,6 +2136,64 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "ILGPU/1.5.1": {
+      "sha512": "Q4URSxEqH+u0XE3XCtYZ2h3FZgLp9VOOeelvKCmniiTlKft0JNCs13EOqayWVjwvPUbD4w/XaFlP3CdmaRdj8w==",
+      "type": "package",
+      "path": "ilgpu/1.5.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE-3RD-PARTY.txt",
+        "LICENSE.txt",
+        "ilgpu.1.5.1.nupkg.sha512",
+        "ilgpu.nuspec",
+        "lib/net471/ILGPU.dll",
+        "lib/net471/ILGPU.pdb",
+        "lib/net471/ILGPU.xml",
+        "lib/net5.0/ILGPU.dll",
+        "lib/net5.0/ILGPU.xml",
+        "lib/net6.0/ILGPU.dll",
+        "lib/net6.0/ILGPU.xml",
+        "lib/net7.0/ILGPU.dll",
+        "lib/net7.0/ILGPU.xml",
+        "lib/netstandard2.1/ILGPU.dll",
+        "lib/netstandard2.1/ILGPU.xml"
+      ]
+    },
+    "ManagedCuda-100/10.0.31": {
+      "sha512": "nN+x9HMHCNDHaWFjXJwEXULMzD0FmdeTfp7p2ILLT3Ae1cxtWuLR5ra0olN+pmbAAGfcEQWGcp+Kui+vghvvZQ==",
+      "type": "package",
+      "path": "managedcuda-100/10.0.31",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/ManagedCuda.dll",
+        "lib/net40/ManagedCuda.pdb",
+        "lib/net40/ManagedCuda.xml",
+        "lib/net45/ManagedCuda.dll",
+        "lib/net45/ManagedCuda.pdb",
+        "lib/net45/ManagedCuda.xml",
+        "lib/net46/ManagedCuda.dll",
+        "lib/net46/ManagedCuda.pdb",
+        "lib/net46/ManagedCuda.xml",
+        "managedcuda-100.10.0.31.nupkg.sha512",
+        "managedcuda-100.nuspec"
+      ]
+    },
+    "ManagedCuda.NETStandard/9.1.300": {
+      "sha512": "Qv8KYzDfnHUdXrgjBsd8jShnP68FCLiUhCkfpFVhZub7FArLN+SpfhUZZt/5emoKfj9CIKAcQjeD6OJR7cdjvw==",
+      "type": "package",
+      "path": "managedcuda.netstandard/9.1.300",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/ManagedCuda.dll",
+        "lib/netstandard2.0/ManagedCuda.xml",
+        "managedcuda.netstandard.9.1.300.nupkg.sha512",
+        "managedcuda.netstandard.nuspec",
+        "runtimes/linux-x64/native/libnvcuda.so"
       ]
     },
     "Microsoft.AspNetCore.Authentication.Abstractions/2.2.0": {
@@ -4936,12 +5126,32 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "TerraFX.Interop.Windows/10.0.22621.2": {
+      "sha512": "lORoYCoURS33Vi7PDvubRugLF2+l5v3rX2oVEqNhpBLjs3aZpqapRvTHPKVwsC+dGrsGuqJ/3yXuxVUb0vl3vg==",
+      "type": "package",
+      "path": "terrafx.interop.windows/10.0.22621.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net6.0/TerraFX.Interop.Windows.dll",
+        "lib/net6.0/TerraFX.Interop.Windows.xml",
+        "lib/net7.0/TerraFX.Interop.Windows.dll",
+        "lib/net7.0/TerraFX.Interop.Windows.xml",
+        "terrafx.interop.windows.10.0.22621.2.nupkg.sha512",
+        "terrafx.interop.windows.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
       "Azure.Storage.Blobs >= 12.18.0",
+      "ComputeSharp >= 2.1.0",
+      "ComputeSharp.Core >= 2.1.0",
       "EntityFramework >= 6.4.4",
+      "ILGPU >= 1.5.1",
+      "ManagedCuda-100 >= 10.0.31",
+      "ManagedCuda.NETStandard >= 9.1.300",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 7.0.12",
       "Microsoft.AspNetCore.SignalR >= 1.1.0",
       "Microsoft.AspNetCore.SignalR.Common >= 7.0.12",
@@ -4994,9 +5204,29 @@
             "target": "Package",
             "version": "[12.18.0, )"
           },
+          "ComputeSharp": {
+            "target": "Package",
+            "version": "[2.1.0, )"
+          },
+          "ComputeSharp.Core": {
+            "target": "Package",
+            "version": "[2.1.0, )"
+          },
           "EntityFramework": {
             "target": "Package",
             "version": "[6.4.4, )"
+          },
+          "ILGPU": {
+            "target": "Package",
+            "version": "[1.5.1, )"
+          },
+          "ManagedCuda-100": {
+            "target": "Package",
+            "version": "[10.0.31, )"
+          },
+          "ManagedCuda.NETStandard": {
+            "target": "Package",
+            "version": "[9.1.300, )"
           },
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
             "target": "Package",
@@ -5051,5 +5281,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'ManagedCuda-100 10.0.31' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "ManagedCuda-100",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }

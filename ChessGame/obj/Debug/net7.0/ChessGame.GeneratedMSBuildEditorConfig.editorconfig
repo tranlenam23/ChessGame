@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\ADMIN\source\repos\ChessGame\ChessGame
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/ADMIN/source/repos/ChessGame/ChessGame/Views/Chess/AI.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlc3NcQUkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ADMIN/source/repos/ChessGame/ChessGame/Views/Chess/Black.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlc3NcQmxhY2suY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

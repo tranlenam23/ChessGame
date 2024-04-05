@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "F8fBVAFwV5vVLEMNj9C1QR1xkTU8hawOut1nCHBRwag=",
+  "Hash": "2lJooc83jzdSL51W48wERzyyvgpadVmfI1rM1GejgoM=",
   "Source": "ChessGame",
   "BasePath": "_content/ChessGame",
   "Mode": "Default",
@@ -253,6 +253,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\White.png"
+    },
+    {
+      "Identity": "C:\\Users\\ADMIN\\source\\repos\\ChessGame\\ChessGame\\wwwroot\\js\\AI.js",
+      "SourceId": "ChessGame",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ADMIN\\source\\repos\\ChessGame\\ChessGame\\wwwroot\\",
+      "BasePath": "_content/ChessGame",
+      "RelativePath": "js/AI.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\AI.js"
     },
     {
       "Identity": "C:\\Users\\ADMIN\\source\\repos\\ChessGame\\ChessGame\\wwwroot\\js\\Black.js",

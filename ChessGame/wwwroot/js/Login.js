@@ -108,7 +108,7 @@ function Check_Signup() {
                     url: "/Home/Check_Signup",
                     type: "POST",
                     contentType: "application/json",
-                    data: JSON.stringify({ Username: Username.value, Pass: Password.value, Email: Email.value, Avatar: "", Win: 0, Lost: 0 }),
+                    data: JSON.stringify({ Username: Username.value, Pass: Password.value, Email: Email.value, Avatar: "https://static.vecteezy.com/system/resources/thumbnails/008/442/086/small/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg", Win: 0, Lost: 0 }),
                     success: function (result) {
                         if (result.success) {
                             window.location.href = "../Home/Login";
@@ -136,7 +136,7 @@ function Check_Signup() {
                         url: "/Home/Check_Signup",
                         type: "POST",
                         contentType: "application/json",
-                        data: JSON.stringify({ Username: Username.value, Pass: Password.value, Email: Email.value, Win: 0, Lost: 0 }),
+                        data: JSON.stringify({ Username: Username.value, Pass: Password.value, Email: Email.value, Avatar: "https://static.vecteezy.com/system/resources/thumbnails/008/442/086/small/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg", Win: 0, Lost: 0 }),
                         success: function (result) {
                             if (result.success) {
                                 window.location.href = "../Home/Login";

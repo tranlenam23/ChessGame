@@ -5,12 +5,20 @@
       "PackagePath": "staticwebassets\\css\\Home.css"
     },
     {
-      "Id": "C:\\Users\\ADMIN\\source\\repos\\ChessGame\\ChessGame\\wwwroot\\css\\chess1.css",
-      "PackagePath": "staticwebassets\\css\\chess1.css"
+      "Id": "C:\\Users\\ADMIN\\source\\repos\\ChessGame\\ChessGame\\wwwroot\\css\\Login.css",
+      "PackagePath": "staticwebassets\\css\\Login.css"
     },
     {
-      "Id": "C:\\Users\\ADMIN\\source\\repos\\ChessGame\\ChessGame\\wwwroot\\css\\offline.css",
-      "PackagePath": "staticwebassets\\css\\offline.css"
+      "Id": "C:\\Users\\ADMIN\\source\\repos\\ChessGame\\ChessGame\\wwwroot\\css\\Profile.css",
+      "PackagePath": "staticwebassets\\css\\Profile.css"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\source\\repos\\ChessGame\\ChessGame\\wwwroot\\css\\Rank.css",
+      "PackagePath": "staticwebassets\\css\\Rank.css"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\source\\repos\\ChessGame\\ChessGame\\wwwroot\\css\\chess1.css",
+      "PackagePath": "staticwebassets\\css\\chess1.css"
     },
     {
       "Id": "C:\\Users\\ADMIN\\source\\repos\\ChessGame\\ChessGame\\wwwroot\\css\\site.css",
@@ -21,16 +29,32 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\ADMIN\\source\\repos\\ChessGame\\ChessGame\\wwwroot\\img\\black.png",
-      "PackagePath": "staticwebassets\\img\\black.png"
+      "Id": "C:\\Users\\ADMIN\\source\\repos\\ChessGame\\ChessGame\\wwwroot\\img\\1.png",
+      "PackagePath": "staticwebassets\\img\\1.png"
     },
     {
-      "Id": "C:\\Users\\ADMIN\\source\\repos\\ChessGame\\ChessGame\\wwwroot\\img\\vs.png",
-      "PackagePath": "staticwebassets\\img\\vs.png"
+      "Id": "C:\\Users\\ADMIN\\source\\repos\\ChessGame\\ChessGame\\wwwroot\\img\\2.png",
+      "PackagePath": "staticwebassets\\img\\2.png"
     },
     {
-      "Id": "C:\\Users\\ADMIN\\source\\repos\\ChessGame\\ChessGame\\wwwroot\\img\\white.png",
-      "PackagePath": "staticwebassets\\img\\white.png"
+      "Id": "C:\\Users\\ADMIN\\source\\repos\\ChessGame\\ChessGame\\wwwroot\\img\\3.png",
+      "PackagePath": "staticwebassets\\img\\3.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\source\\repos\\ChessGame\\ChessGame\\wwwroot\\img\\Black.png",
+      "PackagePath": "staticwebassets\\img\\Black.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\source\\repos\\ChessGame\\ChessGame\\wwwroot\\img\\Vs.png",
+      "PackagePath": "staticwebassets\\img\\Vs.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\source\\repos\\ChessGame\\ChessGame\\wwwroot\\img\\White.png",
+      "PackagePath": "staticwebassets\\img\\White.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\source\\repos\\ChessGame\\ChessGame\\wwwroot\\img\\menu.png",
+      "PackagePath": "staticwebassets\\img\\menu.png"
     },
     {
       "Id": "C:\\Users\\ADMIN\\source\\repos\\ChessGame\\ChessGame\\wwwroot\\js\\Black.js",
@@ -39,6 +63,18 @@
     {
       "Id": "C:\\Users\\ADMIN\\source\\repos\\ChessGame\\ChessGame\\wwwroot\\js\\Home.js",
       "PackagePath": "staticwebassets\\js\\Home.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\source\\repos\\ChessGame\\ChessGame\\wwwroot\\js\\Login.js",
+      "PackagePath": "staticwebassets\\js\\Login.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\source\\repos\\ChessGame\\ChessGame\\wwwroot\\js\\Profile.js",
+      "PackagePath": "staticwebassets\\js\\Profile.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\source\\repos\\ChessGame\\ChessGame\\wwwroot\\js\\Rank.js",
+      "PackagePath": "staticwebassets\\js\\Rank.js"
     },
     {
       "Id": "C:\\Users\\ADMIN\\source\\repos\\ChessGame\\ChessGame\\wwwroot\\js\\White.js",
